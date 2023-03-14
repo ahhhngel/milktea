@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\TodoController;
 use Symfony\Component\HttpFoundation\Request;
-
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +19,4 @@ use Symfony\Component\HttpFoundation\Request;
 Route::get('/',[TodoController::class, 'index'])->name('partial.index');
 Route::get('/about',[TodoController::class, 'about'])->name('partial.about');
 Route::get('/contact',[TodoController::class, 'contact'])->name('partial.contact');
+Route::resource('/admin', AdminController::class);

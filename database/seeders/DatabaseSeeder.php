@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +14,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(5)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        DB::table('todos')->insert([
+            'name'          =>  'Taylor Swift',
+            'address'       =>  'Malaybalay City, Bukidnon',
+            'mobile'          =>  '09978584850'
+        ]);
+
+        DB::table('todos')->insert([
+            'name'          =>  'Justine Bieber',
+            'address'       =>  'Cabanglasan, Bukidnon',
+            'mobile'          =>  '09075354624'
+        ]);
+
+        DB::table('todos')->insert([
+            'name'          =>  'Maria Clara Garcia',
+            'address'       =>  'Valencia City, Bukidnon',
+            'mobile'          =>  '09347675878'
+        ]);
+
     }
 }
